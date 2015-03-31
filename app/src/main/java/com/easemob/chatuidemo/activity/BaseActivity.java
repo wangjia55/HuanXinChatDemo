@@ -22,6 +22,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NotificationCompat;
+import android.util.Log;
 import android.view.View;
 
 import com.easemob.chat.EMChatManager;
@@ -64,6 +65,7 @@ public class BaseActivity extends FragmentActivity {
      * @param message
      */
     protected void notifyNewMessage(EMMessage message) {
+        Log.e("TAG", "notifyNewMessage");
         //如果是设置了不提醒只显示数目的群组(这个是app里保存这个数据的，demo里不做判断)
         //以及设置了setShowNotificationInbackgroup:false(设为false后，后台时sdk也发送广播)
         if(!EasyUtils.isAppRunningForeground(this)){
